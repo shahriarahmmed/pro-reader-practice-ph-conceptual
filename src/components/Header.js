@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -34,34 +34,43 @@ const Header = () => {
           </Link>
           <ul className='flex items-center hidden space-x-8 lg:flex'>
             <li>
-              <Link
+              <NavLink
                 to='/home'
                 aria-label='Home'
                 title='Home'
-                className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                className={({isActive}) => isActive ?
+                'font-medium tracking-wide text-blue-700 transition-colors duration-200 hover:text-deep-purple-accent-400' : 
+                'font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400' 
+              }
               >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to='/books'
                 aria-label='Books'
                 title='Books'
-                className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                className={({isActive}) => isActive ?
+                'font-medium tracking-wide text-blue-700 transition-colors duration-200 hover:text-deep-purple-accent-400' : 
+                'font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400' 
+              }
               >
                 Books
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to='/about'
                 aria-label='About us'
                 title='About us'
-                className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                className={({isActive}) => isActive ?
+                'font-medium tracking-wide text-blue-700 transition-colors duration-200 hover:text-deep-purple-accent-400' : 
+                'font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400' 
+              }
               >
                 About us
-              </Link>
+              </NavLink>
             </li>
           </ul>
           <div className='lg:hidden'>
